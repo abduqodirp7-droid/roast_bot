@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roast AI – Mini App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="miniapp.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="miniapp-body">
+
+<!-- MINI APP SCREENS -->
+<div class="miniapp-wrapper">
+
+  <!-- SCREEN 1: Welcome -->
+  <div class="screen active" id="screen-welcome">
+    <div class="mini-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+    </div>
+    <div class="mini-logo">
+      <div class="mini-logo-icon">🔥</div>
+      <h1 class="mini-logo-text">Roast<span class="logo-accent">AI</span></h1>
+      <p class="mini-logo-sub">O'zbekcha hazil sun'iy intellekti</p>
+    </div>
+    <div class="mini-actions">
+      <button class="btn btn-primary btn-full" id="btn-start-roast">
+        🔥 Roast boshlash
+      </button>
+      <button class="btn btn-ghost btn-full" id="btn-how-it-works">
+        ❓ Qanday ishlaydi?
+      </button>
+    </div>
+    <div class="mini-footer-note">Faqat ko'ngil ochar maqsadda yaratilgan</div>
+  </div>
+
+  <!-- SCREEN 2: How it works -->
+  <div class="screen" id="screen-how">
+    <div class="mini-header">
+      <button class="back-btn" id="back-from-how">← Orqaga</button>
+      <h2>Qanday ishlaydi?</h2>
+    </div>
+    <div class="how-content">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>O'zingiz haqida yozing</strong>
+          <p>Kasbingiz, qiziqishlaringiz, muammolaringiz — xohlagan narsani yozing.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>AI tahlil qiladi</strong>
+          <p>Sun'iy intellekt sizning yozganingizni o'qib, noyob roast tayyorlaydi.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Kulasiz 😂</strong>
+          <p>Do'stlaringizga yuboring, birga kuling. Hech kim xafa bo'lmaydi!</p>
+        </div>
+      </div>
+      <div class="how-example">
+        <div class="example-label">Misol:</div>
+        <div class="example-input">💬 "Men har kuni erta turaman deyman, lekin har safar kech qolaman"</div>
+        <div class="example-arrow">⬇️</div>
+        <div class="example-output">🔥 "Optimizmingiz bilan NASA'da ishlasangiz bo'lardi, lekin u yerda ham kechikasiz" 😄</div>
+      </div>
+      <button class="btn btn-primary btn-full" id="btn-start-from-how">
+        🔥 Boshlash
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: Chat -->
+  <div class="screen" id="screen-chat">
+    <div class="chat-header-mini">
+      <button class="back-btn" id="back-from-chat">← Orqaga</button>
+      <div class="chat-title">
+        <div class="chat-avatar-mini">🔥</div>
+        <div>
+          <strong>Roast AI</strong>
+          <div class="online-status"><span class="online-dot"></span> Tayyor</div>
+        </div>
+      </div>
+      <button class="clear-btn" id="clear-chat" title="Tozalash">🗑️</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot intro-msg">
+        Salom! 👋 Men Roast AI. O'zingiz haqingizda biror narsa yozing — men sizni do'stlarcha roast qilaman. Xotirjam bo'ling, haqorat yo'q, faqat kulgili hazil! 😄
+      </div>
+    </div>
+
+    <div class="chat-input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="userInput"
+          class="chat-textarea"
+          placeholder="O'zingiz haqida yozing... (masalan: men har kuni sport qilaman deyman...)"
+          rows="1"
+          maxlength="500"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" aria-label="Yuborish">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        </button>
+      </div>
+      <div class="char-count"><span id="charCount">0</span>/500</div>
+    </div>
+  </div>
+
+</div>
+
+<script src="miniapp.js"></script>
+</body>
+</html>
